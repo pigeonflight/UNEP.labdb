@@ -12,3 +12,4 @@ UNEP.labdb.egg-info
 /var/
 /.mr.developer.cfg
 /src/plone.app.widgets
+*.swp
