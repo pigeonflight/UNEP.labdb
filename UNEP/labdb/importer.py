@@ -1,14 +1,40 @@
-from bs4 import BeautifulSoup
-import urllib
 import json
+import urllib
+from bs4 import BeautifulSoup
+from plone.dexterity.utils import createContentInContainer
+from Products.CMFCore.utils import getToolByName
+from zExceptions import BadRequest
+
  
 #############################
 ### supporting functions
 #############################
 class LabImporter:
-    """ An Importer that imports Labs into the UNEP website """
-    def __init__(self):
+    """ An Importer that imports Labs into the UNEP website 
+       You should be able to do the following:
+       li = LabImporter(context,request)
+       li.create_lab_folder()
+       lab = li.create_lab(u"My Lab")
+ """
+    def __init__(self,portal):
         self.query_url = "http://carrcu.org/components/com_uneplabsdatabase/labinfo.php?labid=%(page)s" 
+        #portal_url = getToolByName(context, "portal_url")
+        self.portal = portal #portal_url.getPortalObject()
+
+    def create_lab_folder(self):
+        try:
+            lab_folder = self.portal.invokeFactory('Folder', 'labs')
+            self.lab_folder = lab_folder
+            print("lab folder created")
+        except BadRequest:
+            self.lab_folder = self.portal['labs']
+            print("lab folder already existed")
+
+    def create_lab(self,lab_name):
+        lab = createContentInContainer(
+              self.lab_folder, u"UNEP.labdb.lab", title=lab_name
+              )
+        return lab
 
 class LabScraper:
     """ A Scraper that queries the CARRCU website """
