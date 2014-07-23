@@ -1,9 +1,14 @@
 from bs4 import BeautifulSoup
 import urllib
+import json
  
 #############################
 ### supporting functions
 #############################
+class LabImporter:
+    """ An Importer that imports Labs into the UNEP website """
+    def __init__(self):
+        self.query_url = "http://carrcu.org/components/com_uneplabsdatabase/labinfo.php?labid=%(page)s" 
 
 class LabScraper:
     """ A Scraper that queries the CARRCU website """
@@ -34,7 +39,7 @@ class LabScraper:
             #print "there are %s results" % len(results)
             #for result in results: print result["company_name"],",",
             labs.append(lab)
-        self.labs = labs
+        self.labs = json.dumps(labs)
 
     
     @property
@@ -66,7 +71,9 @@ class LabScraper:
         for row in rows:
             value = row.find('td').get_text()
             key = row.find('th').get_text()
-            data[key.strip()] = value.strip()
+            key = key.strip().encode('ascii','ignore')
+            value = value.strip().encode('ascii','ignore')
+            data[key] = value
         return data
  
 
