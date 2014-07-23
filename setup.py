@@ -31,6 +31,7 @@ setup(name='UNEP.labdb',
           'collective.geo.bundle',
           'collective.z3cform.datagridfield',
           'eea.facetednavigation',
+          'beautifulsoup4',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
