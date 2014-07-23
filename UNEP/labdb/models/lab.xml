@@ -4,7 +4,172 @@
     
     <schema>
 
-     <field name="lab_type" type="zope.schema.Set"> <description/> <title>Lab Type</title> <value_type type="zope.schema.Choice"> <values> <element>Biological</element> <element>GIS and Modeling</element> <element>Wastewater</element> <element>Microbiological</element> <element>Chemical Analysis</element> <element>Drugs/Medical/Hormone</element> <element>Physical</element> <element>Radioactive/Tracer Studies</element> </values> </value_type> </field> <field name="country" type="zope.schema.Choice"> <description/> <title>Country</title> <values> <element>Antigua &amp; Barbuda</element> <element>Bahamas</element> <element>Barbados</element> <element>Belize</element> <element>Colombia</element> <element>Costa Rica</element> <element>Cuba</element> <element>Dominica</element> <element>Dominican Republic</element> <element>Grenada</element> <element>Guatemala</element> <element>Guyana</element> <element>Haiti</element> <element>Honduras </element> <element>Jamaica</element> <element>Mexico</element> <element>Netherlands Antilles</element> <element>Nicaragua</element> <element>Panama</element> <element>St Kitts &amp; Nevis</element> <element>Saint Lucia</element> <element>St. Vincent &amp; the Grenadines</element> <element>Suriname</element> <element>Trinidad &amp; Tobago</element> <element>United States of America</element> <element>Venezuela</element> </values> </field> <field name="website" type="zope.schema.TextLine"> <description/> <title>Website</title> </field> <field name="director" type="zope.schema.TextLine"> <description/> <required>False</required> <title>Director</title> </field> <field name="established" type="zope.schema.Date"> <description/> <required>False</required> <title>Established</title> </field> <field name="staff_information" type="zope.schema.TextLine"> <description/> <title>Staff Information</title> </field> <field name="contact_information" type="zope.schema.Text"> <description/> <title>Contact Information</title> </field> <field name="usage_category" type="zope.schema.Choice"> <description/> <title>Usage Category</title> <values/> </field> <field name="specialization_areas" type="zope.schema.Text"> <description/> <title>Specialization Areas</title> </field> <field name="specialized_equipment" type="zope.schema.Text"> <description/> <title>Specialized Equipment</title> </field> <field name="trained_personnel" type="zope.schema.Text"> <description/> <title>Trained Personnel</title> </field> <field name="accreditation" type="zope.schema.Text"> <description/> <title>Accreditation</title> </field> <field name="quality_control_manual" type="zope.schema.Bool"> <description/> <title>Quality Control Manual</title> <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/> </field> <field name="cep_involvement" type="zope.schema.Bool"> <description/> <title>CEP Involvement</title> <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/> </field> <field name="cep_involvement_details" type="zope.schema.Text"> <description/> <required>False</required> <title>CEP Involvement Details</title> </field> <field name="sector" type="zope.schema.Choice"> <description/> <required>False</required> <title>Sector</title> <values> <element>Government Only</element> <element>Public</element> <element>Private</element> </values> </field> <field name="allowed_use" type="zope.schema.Text"> <description/> <required>False</required> <title>Allowed Use</title> </field> <field name="official_language" type="zope.schema.Choice"> <description/> <required>False</required> <title>Official Language</title> <values> <element>English</element> <element>Spanish</element> <element>French</element> <element>Dutch</element> </values> </field> 
+     <field name="lab_type" type="zope.schema.Set"> 
+         <description/> 
+         <required>False</required> 
+         <title>Lab Type</title> 
+         <value_type type="zope.schema.Choice"> 
+             <values> 
+                 <element>Biological</element> 
+                 <element>GIS and Modeling</element> 
+                 <element>Wastewater</element> 
+                 <element>Microbiological</element> 
+                 <element>Chemical Analysis</element> 
+                 <element>Drugs/Medical/Hormone</element> 
+                 <element>Physical</element> 
+                 <element>Radioactive/Tracer Studies</element> 
+             </values> 
+         </value_type> 
+        </field> 
+        
+        <field name="country" type="zope.schema.Choice"> 
+            <description/> 
+            <required>False</required> 
+            <title>Country</title> 
+            <values> 
+                <element>Antigua &amp; Barbuda</element> 
+                <element>Bahamas</element> 
+                <element>Barbados</element> 
+                <element>Belize</element> 
+                <element>Colombia</element> 
+                <element>Costa Rica</element> 
+                <element>Cuba</element> 
+                <element>Dominica</element> 
+                <element>Dominican Republic</element> 
+                <element>Grenada</element> 
+                <element>Guatemala</element> 
+                <element>Guyana</element> 
+                <element>Haiti</element> 
+                <element>Honduras </element> 
+                <element>Jamaica</element> 
+                <element>Mexico</element> 
+                <element>Netherlands Antilles</element> 
+                <element>Nicaragua</element> 
+                <element>Panama</element> 
+                <element>St Kitts &amp; Nevis</element> 
+                <element>Saint Lucia</element> 
+                <element>St. Vincent &amp; the Grenadines</element> 
+                <element>Suriname</element> 
+                <element>Trinidad &amp; Tobago</element> 
+                <element>United States of America</element> 
+                <element>Venezuela</element> 
+            </values> 
+        </field> 
+        
+        <field name="website" type="zope.schema.TextLine"> 
+            <description/> 
+            <required>False</required> 
+            <title>Website</title> 
+        </field> 
+        
+        <field name="director" type="zope.schema.TextLine"> 
+            <description/> 
+            <required>False</required> 
+            <title>Director</title> 
+        </field> 
+        
+        <field name="established" type="zope.schema.Date"> 
+            <description/> 
+            <required>False</required> 
+            <title>Established</title> 
+        </field> 
+        
+        <field name="staff_information" type="zope.schema.TextLine"> 
+            <description/> 
+            <required>False</required> 
+            <title>Staff Information</title> 
+        </field> 
+        
+        <field name="contact_information" type="zope.schema.Text">
+            <description/> 
+            <required>False</required> 
+            <title>Contact Information</title>
+        </field>
+        
+        <field name="usage_category" type="zope.schema.Choice">
+            <description/> 
+            <required>False</required> 
+            <title>Usage Category</title>
+            <values>
+                <element>Private</element> 
+                <element>Public</element>
+                <element>Government only</element>
+                <element>University Funded</element> 
+            </values>
+        </field> 
+        
+        <field name="specialization_areas" type="zope.schema.Text"> 
+            <description/> 
+            <required>False</required> 
+            <title>Specialization Areas</title> 
+        </field> 
+        
+        <field name="specialized_equipment" type="zope.schema.Text"> 
+            <description/> 
+            <required>False</required> 
+            <title>Specialized Equipment</title> 
+        </field> 
+        
+        <field name="trained_personnel" type="zope.schema.Text"> 
+            <description/> 
+            <required>False</required> 
+            <title>Trained Personnel</title> 
+        </field> 
+        
+        <field name="accreditation" type="zope.schema.Text"> 
+            <description/> 
+            <required>False</required> 
+            <title>Accreditation</title> 
+        </field> 
+        
+        <field name="quality_control_manual" type="zope.schema.Bool"> 
+            <description/> 
+            <required>False</required> 
+            <title>Quality Control Manual</title>
+            <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/> 
+        </field> 
+        
+        <field name="cep_involvement" type="zope.schema.Bool">
+            <description/> 
+            <required>False</required> 
+            <title>CEP Involvement</title> 
+            <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/> 
+        </field> 
+        
+        <field name="cep_involvement_details" type="zope.schema.Text"> 
+            <description/> 
+            <required>False</required> 
+            <title>CEP Involvement Details</title> 
+        </field> 
+        
+        <field name="sector" type="zope.schema.Choice"> 
+            <description/> 
+            <required>False</required> 
+            <title>Sector</title> 
+            <values> 
+                <element>Government Only</element> 
+                <element>Public</element> 
+                <element>Private</element> 
+            </values> 
+        </field> 
+        
+        <field name="allowed_use" type="zope.schema.Text"> 
+            <description/> 
+            <required>False</required> 
+            <title>Allowed Use</title> 
+        </field> 
+        
+        <field name="official_language" type="zope.schema.Choice"> 
+            <description/> 
+            <required>False</required> 
+            <title>Official Language</title>
+            <values> 
+                <element>English</element> 
+                <element>Spanish</element>
+                <element>French</element>
+                <element>Dutch</element>
+            </values> 
+        </field> 
     
     </schema>
     
