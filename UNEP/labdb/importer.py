@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 from plone.dexterity.utils import createContentInContainer
 from Products.CMFCore.utils import getToolByName
 from zExceptions import BadRequest
-
  
 #############################
 ### supporting functions
