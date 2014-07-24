@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<object name="labs" meta_type="Dexterity Container">
+ <criteria>
+  <criterion name="c7">
+   <property name="widget">text</property>
+   <property name="title">Lab Name</property>
+   <property name="position">top</property>
+   <property name="section">default</property>
+   <property name="hidden">0</property>
+   <property name="index">SearchableText</property>
+   <property name="default"></property>
+   <property name="onlyallelements">0</property>
+  </criterion>
+  <criterion name="c5">
+   <property name="widget">resultsperpage</property>
+   <property name="title">Results per page</property>
+   <property name="position">top</property>
+   <property name="section">default</property>
+   <property name="hidden">0</property>
+   <property name="start"></property>
+   <property name="end">50</property>
+   <property name="step">5</property>
+   <property name="default">20</property>
+  </criterion>
+  <criterion name="c3">
+   <property name="widget">criteria</property>
+   <property name="title">Current search</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">0</property>
+  </criterion>
+  <criterion name="c1">
+   <property name="widget">checkbox</property>
+   <property name="title">Portal type</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">1</property>
+   <property name="count">1</property>
+   <property name="hidezerocount"></property>
+   <property name="index">portal_type</property>
+   <property name="operator">and</property>
+   <property
+      name="vocabulary">eea.faceted.vocabularies.FacetedPortalTypes</property>
+   <property name="catalog"></property>
+   <property name="maxitems">5</property>
+   <property name="sortreversed">1</property>
+   <property name="default">UNEP.labdb.lab</property>
+  </criterion>
+  <criterion name="c2">
+   <property name="widget">sorting</property>
+   <property name="title">Sort on</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">1</property>
+   <property name="vocabulary"></property>
+   <property name="default">sortable_title</property>
+  </criterion>
+  <criterion name="c4">
+   <property name="widget">checkbox</property>
+   <property name="title">Object provides</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">1</property>
+   <property name="count"></property>
+   <property name="hidezerocount"></property>
+   <property name="index">object_provides</property>
+   <property name="operator">and</property>
+   <property
+      name="vocabulary">eea.faceted.vocabularies.ObjectProvides</property>
+   <property name="catalog"></property>
+   <property name="maxitems">5</property>
+   <property name="sortreversed"></property>
+   <property name="default"></property>
+  </criterion>
+  <criterion name="c0">
+   <property name="widget">checkbox</property>
+   <property name="title">Country</property>
+   <property name="position">right</property>
+   <property name="section">default</property>
+   <property name="hidden">0</property>
+   <property name="count">1</property>
+   <property name="sortcountable">1</property>
+   <property name="hidezerocount">0</property>
+   <property name="index">country</property>
+   <property name="operator">or</property>
+   <property name="operator_visible">1</property>
+   <property name="vocabulary"></property>
+   <property name="catalog">portal_catalog</property>
+   <property name="maxitems">12</property>
+   <property name="sortreversed">0</property>
+   <property name="default">
+    <element value="Antigua &amp; Barbuda"/>
+    <element value="Bahamas"/>
+    <element value="Barbados"/>
+    <element value="Belize"/>
+    <element value="Bermuda"/>
+    <element value="Bonaire"/>
+    <element value="Cayman Islands"/>
+    <element value="Colombia"/>
+    <element value="Costa Rica"/>
+    <element value="Cuba"/>
+    <element value="Curacao"/>
+    <element value="Dominica"/>
+    <element value="Dominican Republic"/>
+    <element value="Grenada"/>
+    <element value="Guyana"/>
+    <element value="Jamaica"/>
+    <element value="Mexico"/>
+    <element value="Nicaragua"/>
+    <element value="Panama"/>
+    <element value="Saint Lucia"/>
+    <element value="Trinidad &amp; Tobago"/>
+    <element value="Turks &amp; Caicos Islands"/>
+    <element value="United States Of America"/>
+    <element value="Us Virgin Islands"/>
+    <element value="Venezuela"/>
+   </property>
+  </criterion>
+ </criteria>
+</object>
