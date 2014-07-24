@@ -26,6 +26,12 @@
 
     <span class="photoAlbumEntryTitle" tal:content="context/pretty_title_or_id|string:">Title</span>
     <span class="photoAlbumEntryDescription" tal:content="string:customize me please">Description</span>
+    <span tal:content="string:customize me please">Description</span>
+        <div tal:define="widgets nocall:context/@@view">
+            <div class="country" tal:replace="structure widgets/++widget++country/render">
+            Contact information.
+            </div>
+       </div>
 
   </a>
 </div>
