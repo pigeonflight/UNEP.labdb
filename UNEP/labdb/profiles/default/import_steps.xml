@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<import-steps>
+    <import-step
+        id="import labs"
+        title="Import of Labs"
+        handler="UNEP.labdb.setuphandlers.setupVarious"
+        version="20140724"
+    >
+        <dependency step="typeinfo" />
+    </import-step>
+</import-steps>

@@ -30,6 +30,8 @@ setup(name='UNEP.labdb',
           'plone.namedfile [blobs]',
           'collective.geo.bundle',
           'collective.z3cform.datagridfield',
+          'eea.facetednavigation',
+          'beautifulsoup4',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
