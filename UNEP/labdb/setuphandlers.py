@@ -52,6 +52,8 @@ def setupVarious(context):
             for key in source_lab.keys():
                 if key not in skip: 
                     value = source_lab[key] 
+                    if key == 'Lab Type':
+                        value = value.split('\n')
                     if key == 'Country':
                         value = value.title().replace('And','&')
                     inv_key = inv_data_map[key] 
