@@ -35,8 +35,8 @@ def setupVarious(context):
                         for item in _fields]
         data_map = dict(fields)
         data_map['title']=u'Lab Name' 
-        data_map['cep_involvement_details']=u'CEP Involvement'
         data_map['telephone & email']=u'Telephone & Email' 
+        data_map['cep_involvement_details']=u'CEP Involvement' 
 
         inv_data_map = {v:k for k, v in data_map.items()}
         skip = ['Address','Established']
@@ -52,7 +52,22 @@ def setupVarious(context):
             for key in source_lab.keys():
                 if key not in skip: 
                     value = source_lab[key] 
-                    if key == 'Country':
+                    if value in ['','Unknown']:
+                        value = None
+                    elif key in ['Lab Type',]:
+                        value = value.split('\n')
+                    elif key == 'Country':
                         value = value.title().replace('And','&')
+                    elif key == 'CEP Involvement':
+                        setattr(lab_,'cep_involvement_details',value)
+                        if value[:3].capitalize().startswith('Y'):
+                            value = True
+                        else:
+                            value = False
+                        setattr(lab_,'cep_involvement',value)
+                        continue
+                        
                     inv_key = inv_data_map[key] 
+
                     setattr(lab_,inv_key,value)
+            api.content.transition(lab_, transition='publish')

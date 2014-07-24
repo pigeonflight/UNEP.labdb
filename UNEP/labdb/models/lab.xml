@@ -93,9 +93,16 @@
             <values>
                 <element>Private</element> 
                 <element>Public</element>
-                <element>Government only</element>
+                <element>Government Only</element>
                 <element>University Funded</element> 
+                <element>Non-profit/Foundation</element> 
             </values>
+        </field> 
+
+        <field name="usage_category_notes" type="zope.schema.Text"> 
+            <description/> 
+            <required>False</required> 
+            <title>Usage Category Notes</title>
         </field> 
         
         <field name="specialization_areas" type="zope.schema.Text"> 
