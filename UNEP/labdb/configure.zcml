@@ -32,6 +32,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+    <browser:page
+    name="faceted-preview-item"
+    for="UNEP.labdb.lab.Lab"
+    template="facetedview_templates/preview-lab-item.pt"
+    permission="zope2.View"
+
+    />
+
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>
