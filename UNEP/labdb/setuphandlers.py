@@ -39,7 +39,7 @@ def setupVarious(context):
         data_map['cep_involvement_details']=u'CEP Involvement' 
 
         inv_data_map = {v:k for k, v in data_map.items()}
-        skip = ['Address','Established']
+        skip = ['Address',]
         li = LabImporter(portal)
         li.create_lab_folder()
 
