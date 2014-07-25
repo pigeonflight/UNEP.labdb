@@ -68,10 +68,67 @@
             <title>Director</title> 
         </field> 
         
-        <field name="established" type="zope.schema.Date"> 
+        <field name="established" type="zope.schema.Choice"> 
             <description/> 
             <required>False</required> 
             <title>Established</title> 
+            <values>
+                <element>1960</element> 
+                <element>1961</element> 
+                <element>1962</element> 
+                <element>1963</element> 
+                <element>1964</element> 
+                <element>1965</element> 
+                <element>1966</element> 
+                <element>1967</element> 
+                <element>1968</element> 
+                <element>1969</element> 
+                <element>1970</element> 
+                <element>1971</element> 
+                <element>1972</element> 
+                <element>1973</element> 
+                <element>1974</element> 
+                <element>1975</element> 
+                <element>1976</element> 
+                <element>1977</element> 
+                <element>1978</element> 
+                <element>1979</element> 
+                <element>1980</element> 
+                <element>1981</element> 
+                <element>1982</element> 
+                <element>1983</element> 
+                <element>1984</element> 
+                <element>1985</element> 
+                <element>1986</element> 
+                <element>1987</element> 
+                <element>1988</element> 
+                <element>1989</element> 
+                <element>1990</element> 
+                <element>1991</element> 
+                <element>1992</element> 
+                <element>1993</element> 
+                <element>1994</element> 
+                <element>1995</element> 
+                <element>1996</element> 
+                <element>1997</element> 
+                <element>1998</element> 
+                <element>1999</element> 
+                <element>2001</element>
+                <element>2002</element>
+                <element>2003</element>
+                <element>2004</element>
+                <element>2005</element>
+                <element>2006</element>
+                <element>2007</element>
+                <element>2008</element>
+                <element>2009</element>
+                <element>2010</element>
+                <element>2011</element>
+                <element>2012</element>
+                <element>2013</element>
+                <element>2014</element>
+                <element>2015</element>
+            </values>
         </field> 
         
         <field name="staff_information" type="zope.schema.TextLine"> 
