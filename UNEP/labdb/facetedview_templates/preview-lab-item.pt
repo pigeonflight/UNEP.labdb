@@ -24,9 +24,9 @@
       <img tal:replace="structure python:image_tag(scale='thumb', title=description)" />
     </span>
 
-    <span class="photoAlbumEntryTitle" tal:content="context/pretty_title_or_id|string:">Title</span>
-    <span class="photoAlbumEntryDescription" tal:content="string:customize me please">Description</span>
-    <span tal:content="string:customize me please">Description</span>
+    <div class="photoAlbumEntryTitle" tal:content="context/pretty_title_or_id|string:">Title</div>
+    <div class="contact_information" tal:content="context/contact_information|string:">Contact Information</div>
+    <div tal:content="context/established|string:">Date Established</div>
             <div class="country" tal:content="context/country">
             Country
             </div>
