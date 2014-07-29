@@ -1,0 +1,80 @@
+<style>
+
+
+	.containa{
+		width: 30%;
+		height: 30%;
+		border: 0.5px;
+		border-color: black;
+		border: 10px;
+		background-color: red;
+		align-content: center;
+		overflow:  hidden;
+		margin: auto;
+	}
+	
+	.titles{
+		font-family: sans-serif;
+		min-height: 10%;
+		min-width: 40%;
+		max-width: 45%;
+		background-color: blue;;
+		position: relative;
+		left: 3px;
+		top: 1%;
+		margin: auto;
+		
+	}
+	
+	p{
+		font-weight: bold
+	}
+	
+	.info{
+		background-color: green;
+		position: relative;
+		left: 3px;
+		min-height: 90%;
+		min-width: 60%;
+		max-width: 55%;
+	}
+	
+	
+</style>
+<div class="containa">
+<div class="content-holder"
+	 tal:define="portal_type context/portal_type;
+				 useViewTypes context/portal_properties/site_properties/typesUseViewActionInListings;
+				 useView python:portal_type in useViewTypes;">
+	<a tal:define="
+				   description context/Description|string:;
+				   title context/pretty_title_or_id|string:;
+				   desc_or_title python:description or title;
+				   url context/absolute_url|string:#;
+				   view_url python:(url and useView and url + '/view') or url;
+				   image_thumb exists:context/image_thumb;
+				   image_tag python:getattr(context, 'tag', None)"
+	   tal:attributes="href view_url;
+					   title description">
+
+		<span class="photoAlbumEntryWrapper" tal:condition="image_thumb">
+			<img style="border: none" tal:attributes="
+													  title desc_or_title;
+													  alt title;
+													  src string:$url/image_thumb"/>
+		</span>
+
+		<span class="inside-wrapper" tal:condition="python:not image_thumb and image_tag">
+			<img tal:replace="structure python:image_tag(scale='thumb', title=description)" />
+		</span>
+
+		<div class="titles" tal:content="context/pretty_title_or_id|string:"><p>Title</p></div>
+		<div class="info"><div class="contact_information" tal:content="context/contact_information|string:">Contact Information</div>
+		<div tal:content="context/established|string:">Date Established</div>
+		<div class="country" tal:content="context/country">
+			Country
+		</div></div>
+
+	</a>
+	</div>
+</div>
