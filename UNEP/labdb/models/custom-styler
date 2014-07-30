@@ -4,77 +4,91 @@
 	.containa{
 		width: 30%;
 		height: 30%;
-		border: 0.5px;
-		border-color: black;
-		border: 10px;
-		background-color: red;
+		background-color: #E3E3E3;
 		align-content: center;
 		overflow:  hidden;
 		margin: auto;
+		border-radius:3px;
+		box-shadow: 5px 5px 3px #D3D3D3;
 	}
-	
+
 	.titles{
 		font-family: sans-serif;
 		min-height: 10%;
-		min-width: 40%;
-		max-width: 45%;
-		background-color: blue;;
-		position: relative;
+		max-width: 40%;
+		min-width: 39.5%
+		position: inherit;
 		left: 3px;
-		top: 1%;
-		margin: auto;
+		border-style: solid;
+		border: 10px;
+		border-color: green;
+		float: left;
+		align-items: center;
+		padding: 5px 5px 5px 5px;
+		background-color: #FAFAFA;
+		margin-left: 5px;
+		margin-top: 5px;
+		text-overflow: ellipsis;
+		overflow: visible;
 		
+
 	}
-	
-	p{
-		font-weight: bold
+
+	.titles, p{
+		font-style: normal;
+		width: 100%;
 	}
-	
+
 	.info{
-		background-color: green;
-		position: relative;
-		left: 3px;
-		min-height: 90%;
-		min-width: 60%;
-		max-width: 55%;
+		float: inherit;
+		position: inherit;
+		height: 90%;
+		width: 93.3%;
+		padding: 5px 5px 5px 5px;
+		margin: 10% 5px 5px 5px;
+		background-color: #FAFAFA;
 	}
-	
-	
+
+
 </style>
 <div class="containa">
-<div class="content-holder"
-	 tal:define="portal_type context/portal_type;
-				 useViewTypes context/portal_properties/site_properties/typesUseViewActionInListings;
-				 useView python:portal_type in useViewTypes;">
-	<a tal:define="
-				   description context/Description|string:;
-				   title context/pretty_title_or_id|string:;
-				   desc_or_title python:description or title;
-				   url context/absolute_url|string:#;
-				   view_url python:(url and useView and url + '/view') or url;
-				   image_thumb exists:context/image_thumb;
-				   image_tag python:getattr(context, 'tag', None)"
-	   tal:attributes="href view_url;
-					   title description">
+	<div class="content-holder"
+		 tal:define="portal_type context/portal_type;
+					 useViewTypes context/portal_properties/site_properties/typesUseViewActionInListings;
+					 useView python:portal_type in useViewTypes;">
+		<a tal:define="
+					   description context/Description|string:;
+					   title context/pretty_title_or_id|string:;
+					   desc_or_title python:description or title;
+					   url context/absolute_url|string:#;
+					   view_url python:(url and useView and url + '/view') or url;
+					   image_thumb exists:context/image_thumb;
+					   image_tag python:getattr(context, 'tag', None)"
+		   tal:attributes="href view_url;
+						   title description">
 
-		<span class="photoAlbumEntryWrapper" tal:condition="image_thumb">
-			<img style="border: none" tal:attributes="
-													  title desc_or_title;
-													  alt title;
-													  src string:$url/image_thumb"/>
-		</span>
+			<span class="photoAlbumEntryWrapper" tal:condition="image_thumb">
+				<img style="border: none" tal:attributes="
+														  title desc_or_title;
+														  alt title;
+														  src string:$url/image_thumb"/>
+			</span>
 
-		<span class="inside-wrapper" tal:condition="python:not image_thumb and image_tag">
-			<img tal:replace="structure python:image_tag(scale='thumb', title=description)" />
-		</span>
+			<span class="inside-wrapper" tal:condition="python:not image_thumb and image_tag">
+				<img tal:replace="structure python:image_tag(scale='thumb', title=description)" />
+			</span>
 
-		<div class="titles" tal:content="context/pretty_title_or_id|string:"><p>Title</p></div>
-		<div class="info"><div class="contact_information" tal:content="context/contact_information|string:">Contact Information</div>
-		<div tal:content="context/established|string:">Date Established</div>
-		<div class="country" tal:content="context/country">
-			Country
-		</div></div>
+			
+			
+			<div class="titles" tal:content="context/pretty_title_or_id|string:"><p><b>Title</b></p></div>
+			
+			<div class="titles" tal:content="context/established|string:"><p>Date Established</p></div>
+			
+			<div class="titles" tal:content="context/contact_information|string:"><p>Contact Information</p></div>
+			<div class="titles" tal:content="context/country">
+				<p>Country</p>
+				</div>
 
-	</a>
+		</a>
 	</div>
 </div>
