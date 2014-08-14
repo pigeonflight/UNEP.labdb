@@ -62,3 +62,9 @@ class SampleView(grok.View):
     # grok.name('view')
 
     # Add view methods here
+    
+class LabView(dexterity.DisplayForm):
+  
+    grok.context(ILab)
+    grok.require('zope2.View')
+    grok.name('lab-view')
