@@ -1,0 +1,188 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="example.conference">
+<body>
+
+<metal:main fill-slot="main">
+  <tal:main-macro metal:define-macro="main">
+
+ <div class="w-row">
+      
+    <h1 class="header" tal:content="context/title">Bermuda Aquarium, Museum and Zoo at the Dept. of Conservation Services, Bermuda Government</h1>
+
+    <!-- contact -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Contact</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:content="context/contact_information">40 North Shore Rd
+          <br>Devonshire
+          <br>Bermuda
+          <br>441-293-2727
+          <br>idwalker@gov.bm
+          <br>www.bamz.org / www.conservation.bm</div>
+      </div>
+    </div>
+
+    <!-- country -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Country</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:content="context/country">Country</div>
+      </div>
+    </div>
+
+    <!-- lab type -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Lab Type</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:repeat="type context/lab_type">
+          <tal:item content="type" /><br />
+        </div>
+      </div>
+    </div>
+
+    <!-- country -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Website</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:content="context/website">Website</div>
+      </div>
+    </div>
+
+    <!-- Director -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Director</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:content="context/director">director</div>
+      </div>
+    </div>
+
+    <!-- Established -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Established</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:content="context/established">established</div>
+      </div>
+    </div>
+
+    <!-- Established -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Staff</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:content="context/staff_information">staff</div>
+      </div>
+    </div>
+
+    <!-- usage category -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Usage Category</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:content="context/usage_category">
+          usage category
+        </div>
+        <div class="item-notes" tal:content="context/usage_category_notes">
+          usage category
+        </div>
+      </div>
+    </div>
+
+    <!-- Specialization Areas -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Specialization Areas</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:content="context/specialization_areas">specialization areas</div>
+      </div>
+    </div>
+
+    <!-- Specialized Equipment -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Specialized Equipment</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:content="context/specialized_equipment">specialized equipment</div>
+      </div>
+    </div>
+
+
+<div class="w-row lab-other">
+ <h3>Additional Information</h3>  
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/accreditation" >
+			<p>Accreditation</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/quality_control_manual" >
+			<p>Quality Control Manual</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/cep_involvement" >
+			<p>CEP Involvement</p>
+		</div>
+    </div>
+    <hr>
+ 
+  <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/cep_involvement_details" >
+			<p>CEP Involvement Detailes</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/sector" >
+			<p>Sector</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/allowed_use" >
+			<p>Allowed Use</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/official_language" >
+			<p>Official Language</p>
+		</div>
+    </div>
+    <hr>
+
+
+</div>
+
+  </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
