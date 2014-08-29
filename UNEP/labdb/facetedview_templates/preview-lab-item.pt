@@ -13,18 +13,14 @@ useView python:portal_type in useViewTypes;">
 	tal:attributes="href view_url;
 	title description">
 
-		<h4 class="item lab-name" tal:content="context/pretty_title_or_id|string:">
-			<p>Title</p>
-		</h4>
-
-        <div class="item lab-item contact-information" tal:content="context/contact_information|string:">
-			<p>Contact Information</p>
-		</div>
-
-		<div class="item lab-item country" tal:content="context/country">
-			<p>Country</p>
-		</div>
-
-		
-		</a>
+			<h4 class="item lab-name" tal:content="context/pretty_title_or_id|string:">
+				Title
+			</h4>
+	        <div class="item lab-item contact-information" tal:content="context/contact_information|string:">
+				Contact Information
+			</div>
+			<div class="item lab-item country" tal:content="context/country">
+				Country
+			</div>
+    </a>
 </div>
