@@ -17,16 +17,14 @@ useView python:portal_type in useViewTypes;">
 			<p>Title</p>
 		</div>
 
-		<div class="item lab-item date-established" tal:content="context/established|string:">
-			<p>Date Established</p>
+        <div class="item lab-item contact-information" tal:content="context/contact_information|string:">
+			<p>Contact Information</p>
 		</div>
 
 		<div class="item lab-item country" tal:content="context/country">
 			<p>Country</p>
 		</div>
 
-		<div class="item lab-item contact-information" tal:content="context/contact_information|string:">
-			<p>Contact Information</p>
-		</div>
+		
 		</a>
 </div>
