@@ -13,32 +13,19 @@ useView python:portal_type in useViewTypes;">
 	tal:attributes="href view_url;
 	title description">
 
-		<span class="labItem-wrapper" tal:condition="image_thumb">
-			<img style="border: none" tal:attributes="
-			title desc_or_title;
-			alt title;
-			src string:$url/image_thumb"/>
-		</span>
-
-		<span class="inside-wrapper" tal:condition="python:not image_thumb and image_tag">
-			<img tal:replace="structure python:image_tag(scale='thumb', title=description)" />
-		</span>
-
-
-
 		<div class="heading" tal:content="context/pretty_title_or_id|string:">
 			<p>Title</p>
 		</div>
 
-		<div class="titles DE" tal:content="context/established|string:">
+		<div class="item lab-item date-established" tal:content="context/established|string:">
 			<p>Date Established</p>
 		</div>
 
-		<div class="titles Country" tal:content="context/country">
+		<div class="item lab-item country" tal:content="context/country">
 			<p>Country</p>
 		</div>
 
-		<div id="Title" class="titles" tal:content="context/contact_information|string:">
+		<div class="item lab-item contact-information" tal:content="context/contact_information|string:">
 			<p>Contact Information</p>
 		</div>
 		</a>
