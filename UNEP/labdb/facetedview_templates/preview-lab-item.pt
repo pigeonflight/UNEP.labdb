@@ -1,35 +1,26 @@
-<div class="photoAlbumEntry"
-  tal:define="portal_type context/portal_type;
-              useViewTypes context/portal_properties/site_properties/typesUseViewActionInListings;
-              useView python:portal_type in useViewTypes;">
-  <a tal:define="
-      description context/Description|string:;
-      title context/pretty_title_or_id|string:;
-      desc_or_title python:description or title;
-      url context/absolute_url|string:#;
-      view_url python:(url and useView and url + '/view') or url;
-      image_thumb exists:context/image_thumb;
-      image_tag python:getattr(context, 'tag', None)"
-     tal:attributes="href view_url;
-                     title description">
+<div class="faceted lab"
+tal:define="portal_type context/portal_type;
+useViewTypes context/portal_properties/site_properties/typesUseViewActionInListings;
+useView python:portal_type in useViewTypes;">
+	<a class="content-holder" tal:define="
+	description context/Description|string:;
+	title context/pretty_title_or_id|string:;
+	desc_or_title python:description or title;
+	url context/absolute_url|string:#;
+	view_url python:(url and useView and url + '/view') or url;
+	image_thumb exists:context/image_thumb;
+	image_tag python:getattr(context, 'tag', None)"
+	tal:attributes="href view_url;
+	title description">
 
-    <span class="photoAlbumEntryWrapper" tal:condition="image_thumb">
-      <img style="border: none" tal:attributes="
-        title desc_or_title;
-        alt title;
-        src string:$url/image_thumb"/>
-    </span>
-
-    <span class="photoAlbumEntryWrapper" tal:condition="python:not image_thumb and image_tag">
-      <img tal:replace="structure python:image_tag(scale='thumb', title=description)" />
-    </span>
-
-    <div class="photoAlbumEntryTitle" tal:content="context/pretty_title_or_id|string:">Title</div>
-    <div class="contact_information" tal:content="context/contact_information|string:">Contact Information</div>
-    <div tal:content="context/established|string:">Date Established</div>
-            <div class="country" tal:content="context/country">
-            Country
-            </div>
-
-  </a>
+			<h4 class="item lab-name" tal:content="context/pretty_title_or_id|string:">
+				Title
+			</h4>
+	        <div class="item lab-item contact-information" tal:content="context/contact_information|string:">
+				Contact Information
+			</div>
+			<div class="item lab-item country" tal:content="context/country">
+				Country
+			</div>
+    </a>
 </div>

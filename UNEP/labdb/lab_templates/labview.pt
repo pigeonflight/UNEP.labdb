@@ -1,0 +1,158 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="example.conference">
+<body>
+
+<metal:main fill-slot="main">
+  <tal:main-macro metal:define-macro="main">
+
+ <h1 class="documentFirstHeading" tal:content="context/title" />
+    <hr>
+ 
+<div class="lab-view-container">
+ 
+  <div class="titles">
+  <div class="titles, field" tal:replace="structure view/w/lab_type" >
+			<p>Lab Type</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/country" >
+			<p>Country</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/website" >
+			<p>Website</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/director" >
+			<p>Director</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/established" >
+			<p>Established</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/contact_information" >
+			<p>Contact Information</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/staff_information" >
+			<p>Staff Information</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/usage_category" >
+			<p>Usage Category</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/usage_category_notes" >
+			<p>Usage Category Notes</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/specialization_areas" >
+			<p>Specialization Areas</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/specialized_equipment" >
+			<p>Specialized Equipment</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/trained_personnel" >
+			<p>Trained Personnel</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/accreditation" >
+			<p>Accreditation</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/quality_control_manual" >
+			<p>Quality Control Manual</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/cep_involvement" >
+			<p>CEP Involvement</p>
+		</div>
+    </div>
+    <hr>
+ 
+  <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/cep_involvement_details" >
+			<p>CEP Involvement Detailes</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/sector" >
+			<p>Sector</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/allowed_use" >
+			<p>Allowed Use</p>
+		</div>
+    </div>
+    <hr>
+ 
+ <div class="titles"> 
+  <div class="field" tal:replace="structure view/w/official_language" >
+			<p>Official Language</p>
+		</div>
+    </div>
+    <hr>
+
+
+</div>
+
+  </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
