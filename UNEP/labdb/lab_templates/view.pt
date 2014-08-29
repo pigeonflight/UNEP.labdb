@@ -10,7 +10,6 @@
 <metal:main fill-slot="main">
   <tal:main-macro metal:define-macro="main">
 
-
  <div class="w-row">
       
     <h1 class="header" tal:content="context/title">Bermuda Aquarium, Museum and Zoo at the Dept. of Conservation Services, Bermuda Government</h1>
@@ -129,8 +128,7 @@
 
 
 <div class="w-row lab-other">
- <h3>Additional Information</h3>
-  
+ <h3>Additional Information</h3>  
  <div class="titles"> 
   <div class="field" tal:replace="structure view/w/accreditation" >
 			<p>Accreditation</p>
