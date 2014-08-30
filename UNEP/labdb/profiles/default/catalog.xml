@@ -1,0 +1,11 @@
+<?xml version="1.0"?> 
+<object name="portal_catalog" meta_type="Plone Catalog Tool">   
+<index name="country" meta_type="KeywordIndex">     
+<indexed_attr value="country"/>   
+</index>   
+<column value="country"/> 
+<index name="lab_type" meta_type="KeywordIndex">     
+<indexed_attr value="lab_type"/>   
+</index>   
+<column value="lab_type"/> 
+</object>
