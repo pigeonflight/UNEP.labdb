@@ -50,7 +50,7 @@ class ILab(_ILab,model.Schema):
 
     form.widget(telephone=DataGridFieldFactory)
     telephone= schema.List(
-                title=_(u"Telephone Numbers"),
+                title=_(u"Telephone Number(s)"),
                 value_type=DictRow(
                     title=_(u"Number"), 
                     schema=ITelephoneRow,
