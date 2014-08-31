@@ -140,7 +140,38 @@
             <required>False</required> 
             <title>Staff Information</title> 
         </field> 
-        
+
+  <!-- <field name="telephone" type="zope.schema.List"
+    form:widget="collective.z3cform.datagridfield.DataGridFieldFactory">
+       <title>Telephone</title>
+      <description>Test desc</description>
+      <max_length>10</max_length>
+      <min_length>2</min_length>
+      <missing_value/>
+      <readonly>False</readonly>
+      <required>False</required>
+      
+      <value_type type="collective.z3cform.datagridfield.DictRow">
+        <title>Number</title>
+        <schema>UNEP.lab.IPhoneSchema</schema>
+      </value_type>
+    </field>
+-->
+    <!--
+<field name="education" type="zope.schema.List"
+form:widget="collective.z3cform.datagridfield.DataGridFieldFactory"
+>
+<title>Most Recent School</title>
+<required>False</required>
+<min_length>
+1</min_length>
+<value_type type="collective.z3cform.datagridfield.DictRow">
+<title>sup</title>
+</value_type>
+</field>
+-->
+
+
         <field name="contact_information" type="zope.schema.Text">
             <description/> 
             <required>False</required> 
