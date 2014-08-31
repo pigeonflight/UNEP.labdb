@@ -13,7 +13,6 @@ def setupVarious(context):
         return
 
     portal = api.portal.get()
-    #request = getattr(portal, 'REQUEST', None)
     
     #check for the existence of meetings and documents
     #
@@ -24,29 +23,33 @@ def setupVarious(context):
             id='labs',
             title='Labs'
         )
-        api.content.transition(labs, transition='publish')
         behavior = constrains.ISelectableConstrainTypes(labs)
         behavior.setConstrainTypesMode(constrains.ENABLED)
         behavior.setLocallyAllowedTypes(['UNEP.labdb.lab', 'Folder'])
         behavior.setImmediatelyAddableTypes(['UNEP.labdb.lab', 'Folder'])
+        
+        li = LabImporter(portal)
+        li.create_lab_folder()
 
+        api.content.transition(labs, transition='publish')
+        _lab_data = context.readDataFile('labdata.json')
+        lab_data = json.loads(_lab_data)
+        import_labs(context,lab_data,li)
+
+def import_labs(context,lab_data,li):
+        # create all the labs
         _fields = getFieldsInOrder(ILab)
         fields = [(item[0],item[0].title().replace('_',' '))
                         for item in _fields]
         data_map = dict(fields)
         data_map['title']=u'Lab Name' 
-        data_map['telephone & email']=u'Telephone & Email' 
+        data_map['telephone']=u'Telephone & Email' 
         data_map['cep_involvement_details']=u'CEP Involvement' 
 
-        inv_data_map = {v:k for k, v in data_map.items()}
+        schema_map = {v:k for k, v in data_map.items()}
         skip = ['Address',]
-        li = LabImporter(portal)
-        li.create_lab_folder()
 
-        # create all the labs
-        _lab_data = context.readDataFile('labdata.json')
-        lab_data = json.loads(_lab_data)
-        for source_lab in lab_data:
+        for source_lab in lab_data: 
             lab_ = li.create_lab(source_lab['Lab Name'])
             # iterate over each attribute an set it
             for key in source_lab.keys():
@@ -54,6 +57,10 @@ def setupVarious(context):
                     value = source_lab[key] 
                     if value in ['','Unknown']:
                         value = None
+
+                    elif key == 'Telephone & Email':
+                        import pdb;pdb.set_trace()
+                        value = extract_phone_numbers(value)
                     elif key in ['Lab Type',]:
                         value = value.split('\n')
                     elif key == 'Country':
@@ -66,8 +73,21 @@ def setupVarious(context):
                             value = False
                         setattr(lab_,'cep_involvement',value)
                         continue
-                        
-                    inv_key = inv_data_map[key] 
+                    
+                    # in order to map the value correctly
+                    # we get the name of the schema key
+                    #     
+                    schema_key = schema_map[key] 
 
-                    setattr(lab_,inv_key,value)
+                    setattr(lab_,schema_key,value)
             api.content.transition(lab_, transition='publish')
+
+def extract_phone_numbers(tel_n_email,_field=None):
+    items = tel_n_email.split('\n')
+    phone_numbers = []
+    for item in items:
+        field = item.strip()
+        if _field == "Telephone":
+            phone_numbers.append({'phone_number':field})
+        _field = field
+    return phone_numbers

@@ -14,6 +14,17 @@
       
     <h1 class="header" tal:content="context/title">Bermuda Aquarium, Museum and Zoo at the Dept. of Conservation Services, Bermuda Government</h1>
 
+    <!-- telephone -->
+    <div class="w-row lab-row item-row">
+      <div class="w-col w-col-3">
+        <h3 class="listing lab-field-label">Phone</h3>
+      </div>
+      <div class="w-col w-col-9">
+        <div class="item-field" tal:repeat="item context/telephone">
+          <tal:phone tal:replace="item/phone_number" /><tal:comma tal:condition="not: repeat/item/last">,</tal:comma></div>
+      </div>
+    </div>
+
     <!-- contact -->
     <div class="w-row lab-row item-row">
       <div class="w-col w-col-3">
@@ -129,54 +140,46 @@
 
 <div class="w-row lab-other">
  <h3>Additional Information</h3>  
- <div class="titles"> 
+ 
   <div class="field" tal:replace="structure view/w/accreditation" >
 			<p>Accreditation</p>
 		</div>
-    </div>
-    <hr>
+   
  
- <div class="titles"> 
+ 
   <div class="field" tal:replace="structure view/w/quality_control_manual" >
 			<p>Quality Control Manual</p>
 		</div>
-    </div>
-    <hr>
+  
  
- <div class="titles"> 
+ 
   <div class="field" tal:replace="structure view/w/cep_involvement" >
 			<p>CEP Involvement</p>
 		</div>
-    </div>
-    <hr>
+   
  
-  <div class="titles"> 
+  
   <div class="field" tal:replace="structure view/w/cep_involvement_details" >
 			<p>CEP Involvement Detailes</p>
 		</div>
-    </div>
-    <hr>
+  
  
- <div class="titles"> 
+ 
   <div class="field" tal:replace="structure view/w/sector" >
 			<p>Sector</p>
 		</div>
-    </div>
-    <hr>
+   
  
- <div class="titles"> 
+ 
   <div class="field" tal:replace="structure view/w/allowed_use" >
 			<p>Allowed Use</p>
 		</div>
-    </div>
-    <hr>
+   
  
- <div class="titles"> 
   <div class="field" tal:replace="structure view/w/official_language" >
 			<p>Official Language</p>
 		</div>
-    </div>
-    <hr>
+  
 
 
 </div>
