@@ -19,6 +19,9 @@ useView python:portal_type in useViewTypes;">
 	        <div class="item lab-item contact-information" tal:content="context/contact_information|string:">
 				Contact Information
 			</div>
+			<div class="item lab-item telephone" tal:repeat="item context/telephone">
+				<tal:phone tal:replace="item/phone_number" /><tal:comma tal:condition="not: repeat/item/last">,</tal:comma>
+			</div>
 			<div class="item lab-item country" tal:content="context/country">
 				Country
 			</div>
