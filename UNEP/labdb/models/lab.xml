@@ -27,15 +27,19 @@
             <required>False</required> 
             <title>Country</title> 
             <values> 
-                <element>Antigua &amp; Barbuda</element> 
+                <element>Antigua &amp; Barbuda</element>
+                <element>Aruba</element> 
                 <element>Bahamas</element> 
                 <element>Barbados</element> 
                 <element>Belize</element>
                 <element>Bermuda</element>
+                <element>Bonaire</element>
+                <element>British Virgin Islands</element>
                 <element>Cayman Islands</element>   
                 <element>Colombia</element> 
                 <element>Costa Rica</element> 
                 <element>Cuba</element> 
+                <element>Curacao<element>
                 <element>Dominica</element> 
                 <element>Dominican Republic</element> 
                 <element>Grenada</element> 
@@ -54,7 +58,8 @@
                 <element>Suriname</element> 
                 <element>Trinidad &amp; Tobago</element>
                 <element>Turks &amp; Caicos Islands</element>
-                <element>United States of America</element> 
+                <element>United States of America</element>
+                <element>US Virgin Islands</element> 
                 <element>Venezuela</element> 
             </values> 
         </field> 
