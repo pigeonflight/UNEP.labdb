@@ -59,7 +59,6 @@ def import_labs(context,lab_data,li):
                         value = None
 
                     elif key == 'Telephone & Email':
-                        import pdb;pdb.set_trace()
                         value = extract_phone_numbers(value)
                     elif key in ['Lab Type',]:
                         value = value.split('\n')
