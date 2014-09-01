@@ -9,3 +9,27 @@
 </index>   
 <column value="lab_type"/> 
 </object>
+<!--
+lab_type
+country
+lab_type
+country
+telephone
+website
+director
+established
+staff_information
+contact_information
+usage_category
+usage_category_notes
+specialization_areas
+specialized_equipment
+trained_personnel
+accreditation
+quality_control_manual
+cep_involvement
+cep_involvement_details
+sector
+allowed_use
+official_language
+-->
