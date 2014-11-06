@@ -1,0 +1,14 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    i18n_domain="UNEP.labdb">
+       
+    <gs:upgradeStep
+        title="Upgrade UNEP.labdb to 1.0.1"
+        description="UNEP.labdb upgrade step"
+        source="*"
+        destination="1.0.1"
+        handler=".upgrades.upgrade_to_1_0_1"
+        profile="UNEP.labdb:default" />
+       
+</configure>
