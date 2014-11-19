@@ -11,6 +11,7 @@
   <!-- Include configuration for dependencies listed in setup.py -->
   <includeDependencies package="." />
   <include file="upgrades.zcml" />
+  <include file="vocabularies.zcml" />
 
   <!-- Grok the package to initialize schema interfaces and content classes -->
   <grok:grok package="." />
