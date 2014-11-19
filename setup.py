@@ -6,8 +6,7 @@ version = '1.0.2a'
 setup(name='UNEP.labdb',
       version=version,
       description="UNEP Lab DB",
-      long_description=open("README.txt").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.txt").read() ,
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
